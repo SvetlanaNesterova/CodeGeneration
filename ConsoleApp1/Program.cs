@@ -21,8 +21,8 @@ namespace Parser
 
         static void Main(string[] args)
         {
-            DescribeSerializeSample();
-
+            DeserializesGenerateSample();
+            UseSample();
         }
 
         static void DeserializesGenerateSample()
@@ -31,7 +31,7 @@ namespace Parser
             string source = File.ReadAllText(resultFileName);
             ClassDescription res = JsonConvert.DeserializeObject<ClassDescription>(source);
 
-            
+            Type type = Generator.GenerateClass(res);
         }
 
         static void DescribeSerializeSample()
@@ -42,11 +42,18 @@ namespace Parser
             File.WriteAllText(resultFileName, result);
         }
 
+        static void UseSample()
+        {
+            var myyyy = new MyClass();
+            myyyy.Add("aaaa", 100);
+        }
+
         static ClassDescription DescribeSomeClass()
         {
             ClassDescription descr = new ClassDescription("MyClass");
             descr.StatOrDyn = StaticOrDynamic.Dynamic;
             var m = new MethodDescription("Add");
+            m.StaticOrDynamic = StaticOrDynamic.Dynamic;
             m.InputTypes = new[] { "string", "int" };
             m.OutputType = "string";
             descr.Methods.Add(m);

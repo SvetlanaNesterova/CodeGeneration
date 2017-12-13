@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Reflection.Emit;
 using System.Reflection;
 using GrEmit;
@@ -17,14 +15,16 @@ namespace SREtest
             {
                 var ab = SREtest.RunAndGenerateAssembly();
                 CreateEntryPoint(ab, "MyAssemblySRE");
-                ab.Save("MyAssemblySRE");
+                ab.Save("MyAssemblySRE.dll");
 
                 ab = GrEmitTest.RunAndGenerateAssembly();
                 CreateEntryPoint(ab, "MyAssemblyGrEmit");
-                ab.Save("MyAssemblyGrEmit");
+                ab.Save("MyAssemblyGrEmit.dll");
             }
 
+            var myyyyy = MyClass.AddIntToInt(123, 777);
         }
+
 
         static void CreateEntryPoint(AssemblyBuilder assemblyBuilder, string moduleName)
         {
@@ -38,7 +38,7 @@ namespace SREtest
                                 null);
             GroboIL generator = new GroboIL(mainBuilder);
             generator.Ret();
-            
+
             Type programType = typeProgram.CreateType();
             assemblyBuilder.SetEntryPoint(mainBuilder);
         }

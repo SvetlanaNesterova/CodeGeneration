@@ -8,13 +8,16 @@ namespace Parser
 {
     public class ClassDescription : ITypeDescription
     {
-        public string ClassName;
         public StaticOrDynamic StatOrDyn;
+
+        public ClassDescription()
+        {
+        }
 
         public ClassDescription(string name)
         {
-            ClassName = name;
-            allTypes[name] = this;
+            TypeName = name;
+            allTypes[TypeName] = this;
             Constructors = new List<ConstructorDescription>();
             Methods = new List<MethodDescription>();
             InnerClasses = new List<ClassDescription>();
@@ -24,10 +27,5 @@ namespace Parser
         public List<MethodDescription> Methods;
 
         public List<ClassDescription> InnerClasses;
-
-        public override string ToString()
-        {
-            return ClassName;
-        }
     }
 }
