@@ -1,0 +1,45 @@
+
+{
+	"$id":"1",
+	"ClassName":"MyClass",
+	"StatOrDyn":1,
+	"Constructors":
+	[
+		
+	]
+	,
+	"Methods":
+	[
+		
+		{
+			"$id":"2",
+			"MethodName":"Add",
+			"StaticOrDynamic":0,
+			"OutputType":"string",
+			"InputTypes":
+			[
+				"string",
+				"int"
+			]
+			
+		}
+		
+	]
+	,
+	"InnerClasses":
+	[
+		
+	]
+	,
+	"AllTypes":
+	{
+		"$id":"3",
+		"MyClass":
+		{
+			"$ref":"1"
+		}
+		
+	}
+	,
+	"realType":null
+}
