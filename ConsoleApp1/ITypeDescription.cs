@@ -9,18 +9,18 @@ namespace Parser
 {
     public enum StaticOrDynamic { Static, Dynamic };
 
-    public class ITypeDescriber
+    public class ITypeDescription
     {
-        public static Dictionary<string, ITypeDescriber> allTypes;
-        public Dictionary<string, ITypeDescriber> AllTypes;
+        public static Dictionary<string, ITypeDescription> allTypes;
+        public Dictionary<string, ITypeDescription> AllTypes;
         public Type realType;
 
-        static ITypeDescriber()
+        static ITypeDescription()
         {
-            allTypes = new Dictionary<string, ITypeDescriber>();
+            allTypes = new Dictionary<string, ITypeDescription>();
         }
 
-        public ITypeDescriber()
+        public ITypeDescription()
         {
             AllTypes = allTypes;
         }

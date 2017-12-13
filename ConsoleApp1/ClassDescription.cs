@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parser
 {
-    public class ClassDescription : ITypeDescriber
+    public class ClassDescription : ITypeDescription
     {
         public string ClassName;
         public StaticOrDynamic StatOrDyn;

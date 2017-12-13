@@ -47,8 +47,9 @@
   <ItemGroup>
     <Compile Include="ClassDescription.cs" />
     <Compile Include="ExpectedClass.cs" />
-    <Compile Include="IType.cs" />
-    <Compile Include="Method.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="ITypeDescription.cs" />
+    <Compile Include="MethodDescription.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
